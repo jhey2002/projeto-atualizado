@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --fonte-principal: "Poppins", sans-serif;
+    --cor-dos-textos-menores: #57534e;
+    --cor-primaria: #E43A12;
+    --cor-fundo: bisque;
+    --cor-branca: white;
+    --borda-radius: 8px;
+    --espacamento-padrao: 24px;
+    --espacamento-grande: 48px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #FEE7D6;
+    font-family: var(--fonte-principal);
+}
+
+.conteiner-cabecalho{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.caixa-branca {
+    margin-left: 5%;
+    background-color: var(--cor-branca);
+    max-width: 656px;
+    margin: 20px auto;
+    padding: 64px;
+    border-radius: var(--borda-radius);
+}
+
+.voltar {
+    margin-bottom: 10px;
+    color: black;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.voltar img {
+    margin-right: 5px;
+}
+
+.titulo-1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.paragrafo {
+    font-size: 16px;
+    color: var(--cor-dos-textos-menores);
+}
+
+.titulo {
+    margin-bottom: var(--espacamento-padrao);
+    margin-top: var(--espacamento-grande);
+    font-size: 16px;
+    font-weight: 600;
+}
+
+label, input, p {
+    color: var(--cor-dos-textos-menores);
+    font-size: 14px;
+}
+
+.dados {
+    margin-bottom: var(--espacamento-padrao);
+    padding: 16px 12px;
+    border-radius: var(--borda-radius);
+    border: 1px solid #D6D3D1;
+    width: 100%;
+}
+
+.input-arquivo {
+    background-image: url("imagens do desafio/cloud-upload.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 60px 60px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    border: 4px dashed #D6D3D1;
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    text-align: center;
+    padding: 10px;
+    height: 160px;
+    width: 100%;
+    margin-bottom: var(--espacamento-padrao);
+}
+
+.container-trilhas{
+    display: flex;
+    flex-direction:row;
+    gap: 16px ;   
+
+  }
+
+  .trilha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1; 
+    max-width: 256px; 
+    max-height: auto; 
+    border: 2px solid #ccc;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: var(--fonte-principal);
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    padding-left: 30px; 
+
+  }
+  .trilha img{
+    margin-right:30px;
+  }
+
+  .trilha input {
+    position: absolute;
+    left: 10px; 
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    accent-color: #E55300; 
+    cursor: pointer;
+  }
+
+
+.dados-file {
+    display: none;
+}
+
+.botoes {
+    margin-top: var(--espacamento-grande);
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.botao-1, .botao-2 , .botao-3 {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: var(--fonte-principal);
+    min-width: 123px;
+    min-height: 48px;
+    border-radius: var(--borda-radius);
+    cursor: pointer;
+    padding: 12px 24px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.botao-1 {
+    background-color: var(--cor-branca);
+    border: 2px solid var(--cor-primaria);
+    color: var(--cor-primaria);
+}
+
+.botao-1:hover, .botao-1:focus {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+}
+
+.botao-2 {
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    border: 2px solid var(--cor-primaria);
+}
+
+.botao-2:hover, .botao-2:focus {
+    background-color: var(--cor-branca);
+    color: var(--cor-primaria);
+}
+
+.botao-3{
+    background-color: var(--cor-primaria);
+    color: var(--cor-branca);
+    border: 2px solid var(--cor-primaria);
+    
+}
+
+.conteiner-rodape{
+    background-color: #2135A6;
+    border: 8px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
+}
+
+
+.logo-trilhas{
+height: 30px;
+width: 170px;
+}
+
+.logo-traco{
+height: 40px;
+}
+
+.logo-inova{
+height: 30px;
+width: 140px;
+}
+
+
+
+/* Estilos para mensagens de erro */
+.erro-validacao {
+    display: block;
+    color: #e74c3c;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    padding: 0; 
+    background-color: transparent;
+    border-radius: 0;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+
+.validacao {
+    display: block;
+    color: #7f8c8d;
+    font-size: 0.8rem;
+    margin-top: 5px;
+    font-style: italic;
+}
+
+
+.dados.invalido {
+    border-color: #e74c3c;
+    background-color: #fff5f5;
+}
+
+.dados.invalido:focus {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+
+.dados.valido {
+    border-color: #2ecc71;
+    background-color: #f0fff4;
+}
+
+
+.dados-file.invalido + .input-arquivo {
+    color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+
+.container-trilhas.invalido {
+    border: 2px solid #e74c3c;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fff5f5;
+}
+
+
+#termos.invalido + label {
+    color: #e74c3c;
+}
+
+
+.dados.digitando {
+    border-color: #3498db;
+    background-color: #f0f8ff;
+}
+
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
+}

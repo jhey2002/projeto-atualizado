@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulário</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="conteiner-cabecalho">
+            <img src="imagens do desafio/estudo.png" alt="">
+        </div>
+    </header>
+    <main>
+        <div class="caixa-branca">
+            <a href="" class="voltar"><img src="/imagens do desafio/arrow-left-02.png" alt=""> Voltar</a>
+            <h1 class="titulo-1">Formulário de Inscrição</h1>
+            <p class="paragrafo">Preencha os dados abaixo para fazer sua inscrição no Programa Trilhas.</p>
+                <form class="formulario">
+                    <section class="dados-01">
+                        <h2 class="titulo">Informações do Participante</h2>
+
+                        <label for="nome">Nome completo</label>
+                        <input class="dados" type="text" id="nome" name="nome" oninput="validarNome()">
+                        <span id="nome-error" class="erro-validacao"></span>
+                        <span class="validacao"></span>
+
+                        <label for="data-nascimento">Data de nascimento</label>
+                        <input class="dados" type="date" id="data-nascimento" name="data-nascimento" oninput="validardataDeNascimento()">
+                        <span id="data-nascimento-error" class="erro-validacao"></span>
+
+                        <label for="cpf">CPF</label>
+                        <input class="dados" type="text" id="cpf" name="cpf" oninput="validarCPF()" maxlength="14" placeholder="000.000.000-00">
+                        <span id="cpf-error" class="erro-validacao"></span>
+
+                        <label for="sexo">Sexo</label>
+                        <select id="sexo" name="sexo" class="dados" onchange="validarSexo()">
+                            <option value="">Selecione...</option>
+                            <option value="masculino">Masculino</option>
+                            <option value="feminino" selected>Feminino</option>
+                        </select>
+                        <span id="sexo-error" class="erro-validacao"></span>
+
+                        <label for="email">E-mail</label>
+                        <input class="dados" type="email" id="email" name="email" oninput="validarEmail()" placeholder="exemplo@dominio.com">
+                        <span id="email-error" class="erro-validacao"></span>
+
+                        <label for="telefone">Telefone</label>
+                        <input class="dados" type="tel" id="telefone" name="telefone">
+                        <span id="telefone-error" class="erro-validacao"></span>
+
+                        <p>Comprovante de Identidade</p>
+                        <label class="input-arquivo" for="documento-identidade">Clique aqui para <br>selecionar o arquivo</label>
+                        <input class="dados-file" type="file" id="documento-identidade" name="documento-identidade" onchange="validarIdentidade()">
+                        <span id="documento-identidade-error" class="erro-validacao"></span>
+                    </section>
+
+                    <section class="dados-02">
+                        <h2 class="titulo">Endereço Residencial</h2>
+                        <label for="cep">CEP</label>
+                        <input class="dados" type="text" id="cep" name="cep" oninput="validarCep()">
+                        <span id="cep-error" class="erro-validacao"></span>
+
+                        <label for="rua">Rua</label>
+                        <input class="dados" type="text" id="rua" name="rua" oninput="validarRua()">
+                        <span id="rua-error" class="erro-validacao"></span>
+
+                        <label for="numero">Número</label>
+                        <input class="dados" type="text" id="numero" name="numero" oninput="validarNumero()">
+                        <span id="numero-error" class="erro-validacao"></span>
+
+                        <label for="cidade">Cidade</label>
+                        <input class="dados" type="text" id="cidade" name="cidade" oninput="validarCidade()">
+                        <span id="cidade-error" class="erro-validacao"></span>
+
+                        <label for="estado">Estado</label>
+                        <input class="dados" type="text" id="estado" name="estado" value="MA" readonly>
+
+                        <p>Comprovante de Residência</p>
+                        <label class="input-arquivo" for="comprovante">Clique aqui para <br>selecionar o arquivo</label>
+                        <input class="dados-file" type="file" id="comprovante" name="comprovante" onchange="validarComprovante()">
+                        <span id="comprovante-error" class="erro-validacao"></span>
+                    </section>
+
+                    <section class="selecao-pai">
+                        <h2 class="titulo">Trilhas de Aprendizagem</h2>
+                        <p>Selecione apenas uma trilha</p>
+                        <div class="container-trilhas" id="container-trilhas">
+                            <div class="linha">
+                                <label class="trilha">
+                                    <input type="radio" name="trilha" value="frontend">
+                                    <img src="imagens do desafio/front.png" alt="Front-end">
+                                    Programação Front-end
+                                </label>
+                                <label class="trilha">
+                                    <input type="radio" name="trilha" value="backend">
+                                    <img src="imagens do desafio/back.png" alt="Back-end">
+                                    Programação Back-end
+                                </label>
+                            </div>
+                            <div class="linha">
+                                <label class="trilha">
+                                    <input type="radio" name="trilha" value="jogos">
+                                    <img src="imagens do desafio/jogos.png" alt="Jogos">
+                                    Programação de Jogos
+                                </label>
+                                <label class="trilha">
+                                    <input type="radio" name="trilha" value="design">
+                                    <img src="imagens do desafio/ux.png" alt="Design">
+                                    Design e Experiência
+                                </label>
+                            </div>
+                            <div class="linha">
+                                <label class="trilha">
+                                    <input type="radio" name="trilha" value="dados">
+                                    <img src="imagens do desafio/dados.png" alt="Dados">
+                                    Ciência de Dados
+                                </label>
+                            </div>
+                        </div>
+                        <span id="trilha-error" class="erro-validacao"></span>
+                    </section>
+
+                    <section class="grupo-termos" id="grupo-termos">
+                        <input type="checkbox" id="termos" name="termos">
+                        <label for="termos">Declaro que li e concordo com os <a href="#">Termos e Condições</a> e com a <a href="#">Política de Privacidade</a>.</label>
+                        <span id="termos-error" class="erro-validacao"></span>
+                    </section>
+
+                    <section class="botoes">
+                        <button class="botao-1" type="button">Cancelar</button>
+                        <button class="botao-2" type="button" id="btn-salvar" onclick="salvarInformacoes()">Salvar Informações</button>
+                        <button class="botao-3" type="submit">Fazer Inscrição</button>
+                    </section>
+                </form>
+               
+        </div>
+    </main>
+
+    <footer>
+        <div class="conteiner-rodape">
+            <img class="logo-trilhas" src="imagens do desafio/trilhas.png" alt="logo do trilhas">
+            <img class="logo-traco" src="imagens do desafio/traço.png" alt="imagem de uma barra vertical">
+            <img class="logo-inova" src="imagens do desafio/inova.png" alt="logo do inova Maranhão">
+        </div>
+    </footer>
+    <script src="script.js"></script>
+   
+</body>
+
+</html>
